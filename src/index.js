@@ -68,8 +68,16 @@
 
 // 去重
 function dup(arr) {
-  
-  
+
+
+  // let newarr = [arr[0]]
+  // for (const item of arr) {
+  //   if (newarr.indexOf(item) === -1) {
+  //     newarr.push(item)
+  //   }
+  // }
+  // console.log(newarr);
+  // console.log([...new Set(arr)]);
 }
 dup([1,4,24,55,2,15,5,63,12,62,125,3426,12,56,2,3,1,34,2,15,4])
 
