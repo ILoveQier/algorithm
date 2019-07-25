@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
   entry: {
+    jh: './src/jsHigh.js',
     al: './src/algri.js',
     reg: './src/regexp.js'
   },

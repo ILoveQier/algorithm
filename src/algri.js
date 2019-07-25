@@ -148,3 +148,67 @@
 //   console.log((str.substr(-target.length)==target) ? true:false);
 // }
 // confirmEnding("He has to give me a new name", "ame");
+
+
+// 截断字符串
+// function truncate(str,n) {
+//   let len = str.length
+//   let s1 = str.slice(0,n)
+//   let s2 = str.slice(n,len)
+//   console.log(s1,'---',s2);
+// }
+// truncate("Absolutely Longer", 114);
+
+// 指定数目 分割数组
+// function chunk(arr, n) {
+//   let newarr = []
+//   for (let index = 0; index < arr.length; index+=n) {
+//       newarr.push(arr.slice(index,index+n).join(''))    
+//   }
+//   console.log(newarr);
+// }
+// chunk(["a", "1b", "c4", "d4", "1e"], 4);
+
+// 去重
+// function reduplicate(arr) {
+//   // 1. set
+//   // return [...new Set(arr)]
+//   // 2. forof, indexof
+//   // let newarr = []
+//   // for (const item of arr) {
+//   //   if (newarr.indexOf(item) === -1) {
+//   //     newarr.push(item)
+//   //   }
+//   // }
+//   // return newarr
+//   // 3. foreach , indexof
+//   // let newarr = []
+//   // arr.forEach(e => {
+//   //   if (newarr.indexOf(e) === -1) {
+//   //     newarr.push(e)
+//   //   }
+//   // })
+//   // return newarr
+//   // 4. filter
+//   // return arr.filter((item,i) => i === arr.indexOf(item))
+// }
+// let a = reduplicate([1, 23, 1, 1, 11, 24, 1, 5, 2, 5, 5, 25, 6,
+//   1, 213, 541, 5123, 5, 13, 1, 2])
+// console.log(a.toString());
+
+// 数组打乱
+// let arr = [5,25,22,68,35,7854,2556,872,76,265,95,365]
+// let len = arr.length
+// let indexarr = []
+// indexarr.push(parseInt(len/10))
+// indexarr.push(parseInt(len%10)/10)
+// for (let i = 0; i < len; i++) {
+//   let temp = arr[i]
+//   let target = indexarr[0]*parseInt(Math.random()*10) + Math.ceil(indexarr[1]*parseInt(Math.random()*10))
+// console.log(target);
+  
+//   arr[i]=arr[target]
+//   arr[target] = temp
+// }
+// // arr.sort(()=>0.5-Math.random())
+// console.log(arr);
