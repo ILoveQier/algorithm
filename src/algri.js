@@ -300,17 +300,32 @@
 // var obj = {0:'hello',1:'world'};//没有length属性
 // console.log(Array.prototype.slice.call(obj,0));//[]
 
-let arr = [12, 2, 34, 15, 1, 32, 5, 754, 231, 6, 25, 749, 32785, 32, 3685, 123, 678, 23, 7]
-function kuai(arr, flag) {
-  if (arr.length <= 1) {
-    return arr
-  }
-  let mid = arr.splice(parseInt(arr.length / 2), 1)[0]
-  let left = []
-  let right = []
-  for (const item of arr) {
-    ((flag ? item < mid : item > mid) ? left : right).push(item)
-  }
-  return kuai(left,true).concat(mid, kuai(right,true))
-}
-console.log(kuai(arr, true));
+// let arr = [12, 2, 34, 15, 1, 32, 5, 754, 231, 6, 25, 749, 32785, 32, 3685, 123, 678, 23, 7]
+// function kuai(arr, flag) {
+//   if (arr.length <= 1) {
+//     return arr
+//   }
+//   let mid = arr.splice(parseInt(arr.length / 2), 1)[0]
+//   let left = []
+//   let right = []
+//   for (const item of arr) {
+//     ((flag ? item < mid : item > mid) ? left : right).push(item)
+//   }
+//   return kuai(left,true).concat(mid, kuai(right,true))
+// }
+// console.log(kuai(arr, true));
+
+// key去重
+// let arr = [1,13,2,13,25,21,56,12,56,1,6,24,11,11,14,1,2]
+// function del(arr) {
+//   let hash = {}
+//   let narr = []
+//   for (const item of arr) {
+//     if (!hash[item]) {
+//       hash[item] = item
+//       narr.push(item)
+//     }
+//   }
+//   return narr
+// }
+// console.log(del(arr));
