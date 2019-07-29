@@ -197,18 +197,120 @@
 // console.log(a.toString());
 
 // 数组打乱
-// let arr = [5,25,22,68,35,7854,2556,872,76,265,95,365]
-// let len = arr.length
-// let indexarr = []
-// indexarr.push(parseInt(len/10))
-// indexarr.push(parseInt(len%10)/10)
-// for (let i = 0; i < len; i++) {
-//   let temp = arr[i]
-//   let target = indexarr[0]*parseInt(Math.random()*10) + Math.ceil(indexarr[1]*parseInt(Math.random()*10))
-// console.log(target);
-  
-//   arr[i]=arr[target]
-//   arr[target] = temp
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+// function reArr(arr) {
+//   let len = arr.length
+//   while (len) {
+//     let index = Math.floor(Math.random() * len--)
+//     {
+//       [arr[len], arr[index]] = [arr[index], arr[len]]
+//     }
+//   }
+//   console.log(arr);
 // }
+// function reArr(arr) {
+//   let len = arr.length
+//   for (let i = 0; i < len; i++) {
+//     var index = Math.floor(Math.random() * len)
+//     {
+//       [arr[i], arr[index]] = [arr[index], arr[i]]
+//     }
+//   }
+//   console.log(arr);
+// }
+// reArr(arr)
+
 // // arr.sort(()=>0.5-Math.random())
-// console.log(arr);
+
+// 大数相加
+// function sumBig(a, b) {
+//   let res = '', temp = 0
+//   a = a.split('')
+//   b = b.split('')
+//   while (a.length || b.length || temp) {
+//     temp = ~~a.pop() + ~~b.pop()
+//     res = temp % 10 + res
+//     temp = temp > 9
+//   }
+//   console.log(res.replace(/^0+/g, ''));
+// }
+// sumBig('12421512', '21566')
+
+// 从nums里面过滤出所有奇数，并翻倍这些奇数
+// let nums = [1, 2, 3, 4, 5, 6, 7]
+// let isodd = num => num % 2 !== 0
+// let double = num => num *2
+// let add = (a,b) => a+b
+
+// let res = nums.filter(isodd).map(double).reduce(add)
+// console.log(res);
+
+// let arr = [2, 13, 5, 15, 6]
+// // // 插入排序
+// function charu(arr) {
+//   let res = arr.splice(0, 1)
+//   for (const item of arr) {
+//     for (let i = 0; i < res.length; i++) {
+//       if (item < res[i]) {
+//         res.splice(i, 0, item)
+//         break
+//       } else if (i === res.length - 1) {
+//         res.push(item)
+//         break
+//       }
+//     }
+//   }
+//   return res
+// }
+// console.log(charu(arr));
+
+// 快速排序
+// function kuaisu(arr) {
+//   if (arr.length <= 1) {
+//     return arr
+//   }
+//   let mid = arr.splice(parseInt(arr.length / 2), 1)[0]
+//   let left = []
+//   let right = []
+//   for (const item of arr) {
+//     (item < mid ? left : right).push(item)
+//   }
+//   return kuaisu(left).concat(mid, kuaisu(right))
+// }
+// console.log(kuaisu(arr));
+
+// 冒泡排序
+// function maopao(arr) {
+//   for (let i = 0; i < arr.length-1; i++) {
+//     for (let j = i + 1; j < arr.length ; j++) {
+//       if (arr[i] > arr[j]) {
+//         [arr[i], arr[j]] = [arr[j], arr[i]]
+//       }
+//     }
+//   }
+//   console.log(arr);
+// }
+// maopao(arr)
+
+// 字符串slice
+// let str = '123456'
+// console.log([].slice.call(str));
+// var obj = {0:'hello',1:'world',length:2};
+// console.log(Array.prototype.slice.call(obj));//["hello", "world"]
+// var obj = {0:'hello',1:'world'};//没有length属性
+// console.log(Array.prototype.slice.call(obj,0));//[]
+
+let arr = [12, 2, 34, 15, 1, 32, 5, 754, 231, 6, 25, 749, 32785, 32, 3685, 123, 678, 23, 7]
+function kuai(arr, flag) {
+  if (arr.length <= 1) {
+    return arr
+  }
+  let mid = arr.splice(parseInt(arr.length / 2), 1)[0]
+  let left = []
+  let right = []
+  for (const item of arr) {
+    ((flag ? item < mid : item > mid) ? left : right).push(item)
+  }
+  return kuai(left,true).concat(mid, kuai(right,true))
+}
+console.log(kuai(arr, true));
